@@ -2,6 +2,14 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * <h2>Class Student</h2>
+ * The Student program implements an application that
+ * simply adds data about students.
+ *
+ * @version 1.0
+ * @author EgorBusuioc
+ */
 public class Student {
 
     String firstName;
@@ -11,6 +19,9 @@ public class Student {
     int admissionYear;
     int IDNP;
 
+    /**
+     * <h3>Constructor without parameters.</h3>
+     */
     public Student(){
         firstName = null;
         latName = null;
@@ -20,6 +31,15 @@ public class Student {
         IDNP = 0;
     }
 
+    /**
+     * <h3>Constructor with parameters</h3>
+     * @param firstName
+     * @param latName
+     * @param faculty
+     * @param birthDate
+     * @param admissionYear
+     * @param IDNP
+     */
     public Student(String firstName, String latName, String faculty, int birthDate, int admissionYear, int IDNP) {
         this.firstName = firstName;
         this.latName = latName;
@@ -29,6 +49,10 @@ public class Student {
         this.IDNP = IDNP;
     }
 
+    /**
+     * <h3>Copy constructor</h3>
+     * @param stud
+     */
     public Student(Student stud){
         this.firstName = stud.firstName;
         this.latName = stud.latName;
@@ -38,6 +62,10 @@ public class Student {
         this.IDNP = stud.IDNP;
     }
 
+    /**
+     * <h3>Method toString</h3>
+     * @return Readable string with parameters Student's class.
+     */
     @Override
     public String toString() {
         return  "firstName='" + firstName + '\'' +
@@ -54,7 +82,11 @@ public class Student {
         return new Student(stud);
     }
 
-    //AutoCreated Equals method
+    /**
+     * <h3>AutoCreated method Equals</h3>
+     * @param o
+     * @return True or False.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -63,6 +95,14 @@ public class Student {
         return birthDate == student.birthDate && admissionYear == student.admissionYear && IDNP == student.IDNP && firstName.equals(student.firstName) && latName.equals(student.latName) && faculty.equals(student.faculty);
     }
 
+    /**
+     * <h3>Method createStudentFromString</h3>
+     * This method reads strings from "MOCK_DATA.csv" and
+     * adds parameters to class Student.
+     *
+     * @param string
+     * @return Object Student.
+     */
     public static Student createStudentFromString(String string){
         Student student;
         String[] stringArray = string.split(",");
@@ -76,6 +116,13 @@ public class Student {
         return student = new Student(firstName, lastName, faculty, birthDate, admissionYear, IDNP);
     }
 
+    /**
+     * <h3>Input to ArrayList Method</h3>
+     * This method reads data from a file and writes it to an ArrayList
+     *
+     * @param resource MOCK_DATA.csv
+     * @return studentList
+     */
     public static ArrayList<Student> input(File resource){
         ArrayList<Student> studentList = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(resource))) {
