@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * The Main program implements an application that
  * simply displays data from a "MOCK_DATA.csv" file to the standard output.
  *
+ * @see Student
  * @version 1.0
  * @author EgorBusuioc
  */

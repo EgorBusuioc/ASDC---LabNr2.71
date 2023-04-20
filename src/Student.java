@@ -4,9 +4,14 @@ import java.util.Objects;
 
 /**
  * <h2>Class Student</h2>
+ * <p></p>
  * The Student program implements an application that
  * simply adds data about students.
  *
+ * @see Student#toString() 
+ * @see Student#equals(Object)
+ * @see Student#createStudentFromString(String) 
+ * @see Student#input(File) 
  * @version 1.0
  * @author EgorBusuioc
  */
@@ -33,12 +38,13 @@ public class Student {
 
     /**
      * <h3>Constructor with parameters</h3>
-     * @param firstName
-     * @param latName
-     * @param faculty
-     * @param birthDate
-     * @param admissionYear
-     * @param IDNP
+     * <p></p>
+     * @param firstName First Name
+     * @param latName Last Name
+     * @param faculty Faculty
+     * @param birthDate  Birth Date
+     * @param admissionYear Admission year
+     * @param IDNP IDNP
      */
     public Student(String firstName, String latName, String faculty, int birthDate, int admissionYear, int IDNP) {
         this.firstName = firstName;
@@ -51,7 +57,8 @@ public class Student {
 
     /**
      * <h3>Copy constructor</h3>
-     * @param stud
+     * <p></p>
+     * @param stud Object 
      */
     public Student(Student stud){
         this.firstName = stud.firstName;
@@ -64,6 +71,7 @@ public class Student {
 
     /**
      * <h3>Method toString</h3>
+     * <p></p>
      * @return Readable string with parameters Student's class.
      */
     @Override
@@ -84,7 +92,8 @@ public class Student {
 
     /**
      * <h3>AutoCreated method Equals</h3>
-     * @param o
+     * <p></p>
+     * @param o Object
      * @return True or False.
      */
     @Override
@@ -97,10 +106,11 @@ public class Student {
 
     /**
      * <h3>Method createStudentFromString</h3>
+     * <p></p>
      * This method reads strings from "MOCK_DATA.csv" and
      * adds parameters to class Student.
      *
-     * @param string
+     * @param string - String from file
      * @return Object Student.
      */
     public static Student createStudentFromString(String string){
@@ -118,10 +128,11 @@ public class Student {
 
     /**
      * <h3>Input to ArrayList Method</h3>
+     * <p></p>
      * This method reads data from a file and writes it to an ArrayList
      *
      * @param resource MOCK_DATA.csv
-     * @return studentList
+     * @return StudentList
      */
     public static ArrayList<Student> input(File resource){
         ArrayList<Student> studentList = new ArrayList<>();
