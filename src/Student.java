@@ -11,7 +11,7 @@ import java.util.Objects;
  * @see Student#toString() 
  * @see Student#equals(Object)
  * @see Student#createStudentFromString(String) 
- * @see Student#input(File) 
+ * @see Student#input(File)
  * @version 1.0
  * @author EgorBusuioc
  */
